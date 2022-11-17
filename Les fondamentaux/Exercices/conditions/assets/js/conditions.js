@@ -86,6 +86,9 @@ switch (day) {
 
 
 // Exercice 5 
-
-let value = "oui";
+let value = [1, 2, 3];
 console.log('La valeur entrée est un(e) ' + typeof (value));
+
+console.log(document.querySelector('#text'));
+console.log(typeof (window));
+
