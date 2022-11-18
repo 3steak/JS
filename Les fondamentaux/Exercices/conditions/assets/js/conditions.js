@@ -1,7 +1,7 @@
 // Exercice 1
 
 let age = 27;
-if (age > 18) {
+if (age >= 18) {
     console.log('Vous êtes majeur.')
 } else {
     console.log('Vous êtes mineur.')
@@ -10,7 +10,7 @@ if (age > 18) {
 // Exercice 2 
 
 let num = 10;
-if (10 % num == 0) {
+if (num % 2 == 0) {
     console.log('Le nombre est pair')
 } else {
     console.log('Le nombre est impair.')
@@ -18,7 +18,7 @@ if (10 % num == 0) {
 
 // Exercice 3 
 
-let mark = 4;
+let mark = 8;
 
 if ((mark >= 0) && (mark <= 3)) {
     console.log('Mauvais');
@@ -28,8 +28,10 @@ if ((mark >= 0) && (mark <= 3)) {
     console.log('Assez Bien');
 } else if ((mark >= 8) && (mark <= 9)) {
     console.log('Bien');
-} else {
+} else if (mark == 10) {
     console.log('Excellent');
+} else {
+    console.log('Valeur incorrecte');
 };
 
 //  Avec SWITCH ( opérateurs de comparaison non valide)
@@ -87,8 +89,10 @@ switch (day) {
 
 // Exercice 5 
 let value = [1, 2, 3];
+
 console.log('La valeur entrée est un(e) ' + typeof (value));
 
+
+
 console.log(document.querySelector('#text'));
-console.log(typeof (window));
 

@@ -14,16 +14,46 @@ function helloWorld() {
 // Appeler cette fonction et
 //  afficher une réponse dans la console du type "Bonjour Steve".
 
-let firstname = "Benur";
 function helloYou(firstname) {
-    return console.log('Bonjour ' + firstname)
+    return firstname;
 };
+let callFirstname = helloYou('Cyp');
+console.log(`Bonjour ${callFirstname}`);
+
 
 // Exercice 3 
+// Une fonction de return rien
+function average(nbr1, nbr2) {
+    return ((nbr1 + nbr2) / 2);
+};
+let avg = average(2, 4);
+console.log(`La moyenne se fait grâce aux deux nombres additionnés puis divisés par 2. Ce qui nous donne ${avg}`);
 
+
+//  Exercice 4 
+// Fonction fléchée 
+// declaration variable
+let mot = 'bonjour';
+// declaration fonction = parametre => (return)
+let word = (mot) => mot.length;
+console.log(mot + word(mot));
+
+
+//  Exercice 5 
+function howAreYou(name) {
+    return name;
+};
+console.log(`Bonjour, ${name} ! Comment vas-tu ?`);
+
+// Exercice 6
+//  Declaration des variables
 let nbr1 = 2;
 let nbr2 = 4;
+let calc = nbr1 + nbr2;
+// declaration fonction = parametre => (return)
+let moy = (calc) => calc / 2;
 
-function average(nbr1, nbr2) {
-    return console.log(`La moyenne se fait grâce à nbr1 + nbr2 divisé par 2. Ce qui nous donne ` + ((nbr1 + nbr2) / 2));
-}
+console.log(`La moyenne se fait grâce aux deux nombres additionnés puis divisés par 2.
+ Ce qui nous donne ${moy(calc)}`);
+
+
