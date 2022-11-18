@@ -1,12 +1,12 @@
 
 // Exercice 1
 // Créer une fonction nommée "helloWorld" qui retourne
-"Bonjour tout le monde"
 // Appeler cette fonction et afficher sa réponse dans la console.
 
 function helloWorld() {
-    return console.log('Bonjour tout le monde.')
+    return 'Bonjour tout le monde.'
 };
+console.log(helloWorld());
 
 // Exercice 2
 // Créer une fonction nommée "helloYou"
@@ -56,4 +56,7 @@ let moy = (calc) => calc / 2;
 console.log(`La moyenne se fait grâce aux deux nombres additionnés puis divisés par 2.
  Ce qui nous donne ${moy(calc)}`);
 
+// En plus 
 
+typeValue = (oui) => console.log(typeof (oui));
+console.log(typeValue('oui'));
