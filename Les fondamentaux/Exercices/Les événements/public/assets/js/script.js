@@ -28,5 +28,33 @@ for (let nthNbr = 0; nthNbr <= document.querySelectorAll('li').length; nthNbr++)
 
 // rul ?firstname=Cyprien&lastname=Bocquet
 
-let url = window.location.search;
-console.log(url);
+// let url = window.location.search;
+// console.log(url);
+
+
+
+
+let getValue = () => {
+    const firstname = document.getElementById('firstname').value;
+    const lastname = document.getElementById('lastname').value;
+    const input = firstname + ` ` + lastname;
+    console.log(input);
+};
+// Exercice 5 
+// ma classe red est un tableau HTMLCOLLECTION le foreach ne fonctionne pas 
+// je stock dans arrayRED
+const arrayRed = document.getElementsByClassName('red');
+// je boucle l'index ( pour avoir chaque input qui a pour class red )
+for (let indexOfRed = 0; indexOfRed < arrayRed.length; indexOfRed++) {
+
+    // this fait référence a mon HTMLELEMENT : arrayRed[indexOfRed]
+    arrayRed[indexOfRed].addEventListener("focusin", function () {
+        this.style.backgroundColor = "red";
+    });
+    arrayRed[indexOfRed].addEventListener("focusout", function () {
+        this.style.backgroundColor = "white";
+    });
+}
+
+
+
