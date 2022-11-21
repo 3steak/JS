@@ -25,6 +25,12 @@ const languages = ['Javascript', 'Python', 'PHP', 'Java', 'SQL'];
 for (let l = 0; l <= 4; l++) {
     console.log(languages[l])
 };
+// Avec une boucle language
+// array.forEach(language => {
+//     console.log(language);
+// });
+
+
 // Exercice 4
 console.log('EXERCICE 4');
 
@@ -38,30 +44,29 @@ for (let f = 1; f <= 7; f++) {
 // Exercice 5
 
 console.log('EXERCICE 5');
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+let day = getRandomInt(365);
 
-let day = 20;
-// do {
-//     console.log(`Jour ${j} de l'année`)
-//     j += 1;
-// } while (j <= 20);
-
-while (j < 20) {
+while (j < day) {
     console.log(`Jour ${j} de l'année`)
     j += 1;
-    if (j == 20) {
-        console.log(`Jour ${j} atteint`)
-    }
 };
+console.log(`Jour ${j} atteint`)
+
 
 // Exercice 6 
 console.log('EXERCICE 6');
 
 let firstNumber = 2;
 let secondNumber = 8;
+let total = 0;
 
-while (secondNumber < 250) {
-    console.log(secondNumber);
-    secondNumber = firstNumber * secondNumber
+while (total < 250) {
+    console.log(total);
+    total = firstNumber * secondNumber;
+    secondNumber = total;
 }
 
 
