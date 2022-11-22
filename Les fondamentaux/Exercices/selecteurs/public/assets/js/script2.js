@@ -1,5 +1,4 @@
 // Exercice 1
-console.log('EXERCICE 1');
 
 let textToDisplay = 'Comment devenir un AS en JS';
 
@@ -18,6 +17,9 @@ let textLi = document.querySelector('ul').innerText;
 
 // Exercice 3 
 console.log('Exercice 3');
+let getLi = document.querySelectorAll('li');
+
+
 console.log(textLi);
 // J Utilise les backquotes pour modifier mon HTML 
 document.querySelector('ul').innerHTML = `   <ol>
