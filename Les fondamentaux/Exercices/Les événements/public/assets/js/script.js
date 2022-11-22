@@ -37,7 +37,9 @@ for (let nthNbr = 0; nthNbr <= document.querySelectorAll('li').length; nthNbr++)
 let getValue = () => {
     const firstname = document.getElementById('firstname').value;
     const lastname = document.getElementById('lastname').value;
-    const input = firstname + ` ` + lastname;
+    // exo 06 
+    const day = document.getElementById('days').value
+    const input = firstname + ` ` + lastname + ` a choisi le jour : ` + day;
     console.log(input);
 };
 // Exercice 5 
@@ -56,5 +58,10 @@ for (let indexOfRed = 0; indexOfRed < arrayRed.length; indexOfRed++) {
     });
 }
 
+
+
+// Exercice 6
+// recuperer value de id days
+// voir function getValue()
 
 

@@ -12,7 +12,7 @@ section {
     display: flex;
     flex-direction: column;
     background-image: url(https://static1.millenium.org/articles/6/37/65/06/@/1464829-val-article_cover_bd-1.jpg);
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
     background-color: black;
     height: 100vh;
@@ -43,24 +43,27 @@ p,
 .button {
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 30px;
 }
 
 img {
     display: block;
     margin: auto;
-    width: 70vw;
-    height: 10vh;
+    width: 280px;
+    height: 100px;
     background-color: rgba(246, 240, 255, 0.5);
     border-radius: 15px;
 }
 
 button {
     background-color: aqua;
+    padding: 5px;
     border: none;
     border-radius: 15px;
     font-size: medium;
     font-weight: bold;
+    -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 10px 11px 8px 10px rgba(0, 0, 0, 0);
+    box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 10px 11px 8px 10px rgba(0, 0, 0, 0);
 }
 
 form {
@@ -75,6 +78,12 @@ form {
     overflow: hidden;
 }
 
+.myform input {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
 .inputFirstname {
     display: flex;
     flex-direction: column;
@@ -85,6 +94,12 @@ form {
     flex-direction: column;
 }
 
+.daysChoice {
+    margin-top: 10px;
+}
+
 .button_form {
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }

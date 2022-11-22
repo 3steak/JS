@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+}
+
+body {
+
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    background-image: url(https://static1.millenium.org/articles/6/37/65/06/@/1464829-val-article_cover_bd-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    height: 100vh;
+}
+
+.title {
+    background-color: black;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: white;
+}

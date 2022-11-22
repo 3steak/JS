@@ -1,6 +1,14 @@
+// Exercice 1
+console.log('EXERCICE 1');
+
+let textToDisplay = 'Comment devenir un AS en JS';
+
+document.getElementById('text').innerHTML = textToDisplay;
+
+
 console.log('Exercice2');
 
-console.log(document.querySelector('#title').innerText);
+console.log(document.querySelector('#text').innerText);
 
 console.log(document.querySelector('.description').innerText);
 console.log(document.querySelector('ul').innerText);
@@ -12,10 +20,15 @@ let textLi = document.querySelector('ul').innerText;
 console.log('Exercice 3');
 console.log(textLi);
 // J Utilise les backquotes pour modifier mon HTML 
-document.querySelector('ul').innerHTML = `<li>Javascript</li>
+document.querySelector('ul').innerHTML = `   <ol>
 <li>PHP</li>
-<li>...</li>`
-console.log(document.querySelector('ul').innerText);
+<li>Ruby</li>
+<li>Java</li>
+<li>Javascript</li>
+<li>Swift</li>
+<li>C#</li>
+</ol>`
+console.log(document.querySelector('ol').innerText);
 
 // Exercice 4 
 
