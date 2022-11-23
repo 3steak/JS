@@ -1,4 +1,4 @@
-// Exercice 1
+// Exercice 2
 
 let button = document.getElementById('btn');
 let password = document.getElementById('password');
@@ -18,23 +18,6 @@ button.addEventListener("click", (verif) => {
         verifPassword.classList.add('bg-danger');
     }
 })
-
-// button.addEventListener("click", (verif) => {
-//     // si un des deux inputs est vide
-//     if (password.value == '' || verifPassword.value === '') {
-//         console.log(alert('veuillez renseigner un champs'));
-//         //  si un les deux inputs sont identiques
-//     } else if (password.value == verifPassword.value) {
-//         password.style.border = "2px solid green";
-//         verifPassword.style.border = "2px solid green";
-//         //  si ils sont différents
-//     } else {
-//         password.style.border = "2px solid red";
-//         verifPassword.style.border = "2px solid red";
-//     }
-// })
-
-
 
 
 
