@@ -8,7 +8,7 @@
 var canvasDiv = document.getElementById('particle-canvas');
 var options = {
     particleColor: '#888',
-    background: "url(./assets/img/mountain.js)",
+    background: '',
     interactive: true,
     speed: 'medium',
     density: 'high'
