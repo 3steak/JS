@@ -8,7 +8,7 @@ console.log(btn);
 // event.key event.code   key retient le caractere, code retient le code de la touche 
 //  keypress est le type de l'evenement 
 // (event) est la fonction à appeler lorsque l'evenement apparé 
-addEventListener("keypress", (event) => {
+addEventListener("keyup", (event) => {
     console.log(event.code + ` correspond à la touche ` + event.key);
 });
 
@@ -24,14 +24,13 @@ for (let nthNbr = 0; nthNbr <= document.querySelectorAll('li').length; nthNbr++)
         );
     }
 };
+
 //  Exercice 5
 
 // rul ?firstname=Cyprien&lastname=Bocquet
 
 // let url = window.location.search;
 // console.log(url);
-
-
 
 
 let getValue = () => {
