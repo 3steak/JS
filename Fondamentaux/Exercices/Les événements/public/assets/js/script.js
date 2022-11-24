@@ -32,15 +32,16 @@ for (let nthNbr = 0; nthNbr <= document.querySelectorAll('li').length; nthNbr++)
 // let url = window.location.search;
 // console.log(url);
 
-
-let getValue = () => {
+let button = document.getElementById('buttonForm');
+button.addEventListener = ('click', (event) => {
+    event.preventDefault();
     const firstname = document.getElementById('firstname').value;
     const lastname = document.getElementById('lastname').value;
     // exo 06 
-    const day = document.getElementById('days').value
+    const day = document.getElementById('days').value;
     const input = firstname + ` ` + lastname + ` a choisi le jour : ` + day;
     console.log(input);
-};
+});
 // Exercice 5 
 // ma classe red est un tableau HTMLCOLLECTION le foreach ne fonctionne pas 
 // je stock dans arrayRED
@@ -49,10 +50,10 @@ const arrayRed = document.getElementsByClassName('red');
 for (let indexOfRed = 0; indexOfRed < arrayRed.length; indexOfRed++) {
 
     // this fait référence a mon HTMLELEMENT : arrayRed[indexOfRed]
-    arrayRed[indexOfRed].addEventListener("focusin", function () {
+    arrayRed[indexOfRed].addEventListener("focus", function () {
         this.style.backgroundColor = "red";
     });
-    arrayRed[indexOfRed].addEventListener("focusout", function () {
+    arrayRed[indexOfRed].addEventListener("blur", function () {
         this.style.backgroundColor = "white";
     });
 }

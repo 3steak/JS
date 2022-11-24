@@ -33,7 +33,7 @@ console.log(user1);
 console.log('exercice5');
 
 const muskChildren = ['Nevada', 'Vivian', 'Griffin', 'Kai', 'Saxon', 'Damian', 'Exa'];
-
+//  user1.children = muskChildren suffisé 
 Object.defineProperty(user1, 'children', {
     value: muskChildren
 });

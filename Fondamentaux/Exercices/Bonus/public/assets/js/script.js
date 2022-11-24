@@ -10,8 +10,8 @@ button.addEventListener("click", (verif) => {
         console.log(alert('veuillez renseigner un champs'));
         //  si un les deux inputs sont identiques j'utilise bg-secondary en class
     } else if (password.value == verifPassword.value) {
-        password.classList.add('bg-secondary');
-        verifPassword.classList.add('bg-secondary');
+        password.classList.add('bg-success');
+        verifPassword.classList.add('bg-success');
         //  si ils sont différents j'utilise la class bootstrap 
     } else {
         password.classList.add('bg-danger');
