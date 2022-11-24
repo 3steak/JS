@@ -86,22 +86,27 @@
         </nav>
     </header>
     <section class="container section-exo">
-        <div class="row text-center justify-content-center  card_exercice py-4" data-tilt>
+        <div class="row text-center justify-content-center  card_exercice py-4">
             <div class="col-12">
                 <div class="title">
                     <h1>Exercice 2 </h1>
                 </div>
                 <div class=" mx-5 form">
-                    <form>
+                    <form id="formTest">
                         <div class="mb-3">
                             <label for="lastname" class="form-label">Lastname</label>
                             <input type="name" class="form-control" name="lastname" value="" id="lastname">
                             <small value="" id="smallLastname">Votre nom n'est pas valide</small>
                         </div>
                         <div class="mb-3">
-                            <label for="firstname" class="form-label">Firstname</label>
-                            <input type="name" class="form-control" name='firstname' value="" id="firstname">
-                            <small value="" id="smallFirstname">Votre prénom n'est pas valide</small>
+                            <div id="firstnameInput">
+                                <label for="firstname" class="form-label">Firstname</label>
+                                <input type="name" class="form-control" name='firstname' value="" id="firstname">
+                                <small value="" id="smallFirstname">Votre prénom n'est pas valide</small>
+                            </div>
+                        </div>
+                        <div id="bou">
+                            <input id="plus" type="button" value="Ajouter une ligne" />
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>

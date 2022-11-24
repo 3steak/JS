@@ -28,7 +28,7 @@ let email = document.getElementById('email');
 let age = document.getElementById('age');
 
 
-console.log(lastname);
+
 
 
 
@@ -47,7 +47,7 @@ let testLastname = () => {
             lastname.classList.remove("bg-danger", "bg-success");
             document.getElementById('smallLastname').style.display = 'none';
             lastname.value = '';
-        }, "3000")
+        }, "2000")
     }
 };
 
@@ -64,7 +64,7 @@ let testFirstname = () => {
             firstname.classList.remove("bg-danger", "bg-success");
             document.getElementById('smallFirstname').style.display = 'none';
             firstname.value = '';
-        }, "3000")
+        }, "2000")
     }
 };
 
@@ -82,7 +82,7 @@ let testEmail = () => {
             email.classList.remove("bg-danger", "bg-success");
             document.getElementById('smallEmail').style.display = 'none';
             email.value = '';
-        }, "3000")
+        }, "2000")
     }
 };
 let testAge = () => {
@@ -98,7 +98,7 @@ let testAge = () => {
             age.classList.remove("bg-danger", "bg-success");
             document.getElementById('smallAge').style.display = 'none';
             age.value = '';
-        }, "3000")
+        }, "2000")
     }
 };
 
@@ -120,3 +120,34 @@ age.addEventListener('change', (e) => {
 })
 
 
+
+// exercice 3 
+
+window.addEventListener("load", () => {
+    const firstnameInput = document.getElementById("firstnameInput");
+    document.getElementById("plus").addEventListener("click", (e) => {
+        // les crochets pour selectionner un element par ses attributs
+        if (document.querySelectorAll('[name="firstname"]').length < 10) {
+            const formBis = firstnameInput.cloneNode(true);
+            formBis.removeAttribute("id");
+            const t = formBis.querySelectorAll(["label > input"]);
+            for (let i = 0; i < t.length; i++) {
+                t[i].value = ""
+            }
+
+            const targetEvent = e.target.cloneNode();
+            targetEvent.value = " - ";
+            targetEvent.padding = "0px";
+            targetEvent.title = "Supprimer ce champ";
+            // comprendre ligne 19
+            formBis.appendChild(targetEvent);
+
+            targetEvent.addEventListener("click", (e) => {
+                document.getElementById("formTest").removeChild(e.target.parentElement);
+                e.preventDefault()
+            }, false);
+            // a comprendre ligne 25
+            document.getElementById("formTest").insertBefore(formBis, document.getElementById("bou"));
+        }
+    }, false);
+}, false);

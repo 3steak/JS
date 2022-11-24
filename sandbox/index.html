@@ -4,23 +4,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Favorite fruit start</title>
-    <style>
-        input:invalid {
-            border: 2px dashed red;
-        }
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script defer src="/assets/js/script.js"></script>
 
-        input:valid {
-            border: 1px solid black;
-        }
-    </style>
+    <title>test clone form</title>
+
 </head>
 
 <body>
-    <form>
-        <label for="choose">Would you prefer a banana or a cherry?</label>
-        <input title='met cerise batard' id="choose" name="i_like" required pattern="banane|cerise">
-        <button>Submit</button>
+    <form id="formTest">
+        <div class="mb-3">
+            <div id="firstnameInput">
+                <label for="firstname" class="form-label">Firstname</label>
+                <input type="name" class="form-control" name='firstname' value="" id="firstname">
+                <small value="" id="smallFirstname"></small>
+            </div>
+        </div>
+        <div id="bou">
+            <input id="plus" type="button" value="Ajouter une ligne" />
+        </div>
     </form>
 </body>
 
