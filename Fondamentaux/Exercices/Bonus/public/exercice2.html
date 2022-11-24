@@ -18,10 +18,8 @@
     <header>
         <nav class="navbar  navbar-expand-lg navbar-dark ">
             <div class="container">
-                <a class="navbar-brand " href="bonus.html"><a href="https://www.freepnglogos.com/pics/javascript"
-                        title="Image from freepnglogos.com"><img
-                            src="https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png"
-                            width="200" alt="javascript logo transparent logo javascript images" /></a></a>
+                <a class="navbar-brand " href="bonus.html"><img src="./assets/img/js_header.png" width="110"
+                        alt="javascript logo transparent logo javascript images" /></a></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -88,28 +86,32 @@
         </nav>
     </header>
     <section class="container section-exo">
-        <div class="row text-center justify-content-center  card_exercice py-5" data-tilt>
+        <div class="row text-center justify-content-center  card_exercice py-4" data-tilt>
             <div class="col-12">
                 <div class="title">
                     <h1>Exercice 2 </h1>
                 </div>
-                <div class=" m-5 form">
+                <div class=" mx-5 form">
                     <form>
                         <div class="mb-3">
                             <label for="lastname" class="form-label">Lastname</label>
                             <input type="name" class="form-control" name="lastname" value="" id="lastname">
+                            <small value="" id="smallLastname">Votre nom n'est pas valide</small>
                         </div>
                         <div class="mb-3">
                             <label for="firstname" class="form-label">Firstname</label>
                             <input type="name" class="form-control" name='firstname' value="" id="firstname">
+                            <small value="" id="smallFirstname">Votre prénom n'est pas valide</small>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" name='email' value="" id="email">
+                            <small value="" id="smallEmail">Email non valide</small>
                         </div>
                         <div class="mb-3">
                             <label for="age" class="form-label">Votre âge</label>
                             <input type="number" class="form-control" name='age' value="" id="age">
+                            <small value="" id="smallAge">Veuillez renseigner un nombre</small>
                         </div>
                         <input id="btn" type="button" value="YES" class="btn btn-primary">
                     </form>
