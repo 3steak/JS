@@ -1,0 +1,47 @@
+/*  MINI RESET pour enlever les marges natives */
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+/*  import du google font Lato  */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,900&display=swap');
+
+
+.navbar {
+    background-color: white;
+}
+
+.navbar a {
+    color: black
+}
+
+;
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+html,
+body {
+    height: 100vh;
+    max-width: 100vw;
+}
+
+.section-exo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    background-color: black;
+
+}
+
+img {
+    padding: 50px;
+    margin-bottom: 50px;
+    -webkit-box-shadow: 4px 4px 26px 11px rgba(255, 255, 255, 0.97);
+    box-shadow: 4px 4px 26px 11px rgba(255, 255, 255, 0.97);
+}
+
+
+h1 {
+    font-weight: 900;
+    font-size: 10px;
+}
