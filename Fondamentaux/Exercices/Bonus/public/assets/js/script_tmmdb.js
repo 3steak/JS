@@ -1,6 +1,10 @@
-fetch('./assets/js/movies.json')
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+// fetch('./assets/js/movies.json')
+//     .then((response) => response.json())
+//     .then((data) => console.log(data));
+
+
+
+
 
 // object type
 // "id": 399566,
@@ -10,3 +14,31 @@ fetch('./assets/js/movies.json')
 // "vote_average": 8.3
 
 
+const img = document.querySelector('.imgMovie');
+
+// promise en pending 
+let myObject = fetch('./assets/js/movies.json')
+
+
+    // response de mon fetch
+
+    .then((response) => {
+        // desérialisation du fichier json 
+        return response.json();
+    })
+    .then((movies) => {
+        let allMovies = movies.results;
+        console.log(allMovies[0]);
+        img.src = allMovies[0].poster_path;
+        console.log(img);
+    }
+    );
+
+
+
+// class name
+
+// card
+// imgMovie
+// titleMovie
+// textMovie
