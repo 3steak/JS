@@ -6,7 +6,7 @@ let verifPassword = document.getElementById('verifPassword');
 
 button.addEventListener("click", (verif) => {
     // si un des deux inputs est vide
-    if (password.value == '' || verifPassword.value === '') {
+    if (password.value === '' || verifPassword.value === '') {
         console.log(alert('veuillez renseigner un champs'));
         //  si un les deux inputs sont identiques j'utilise bg-secondary en class
     } else if (password.value == verifPassword.value) {
