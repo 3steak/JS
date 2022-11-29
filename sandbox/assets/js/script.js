@@ -1,29 +1,26 @@
+`
+<div class="col-2 carte m-3">
+    <div class="img p-2">
+    </div>
+    <div class="asideCard p-2">
+        <h2 class="titleMovie">${movies.original_title}</h2>
+        <p class="textMovie">${movies.overview}</p>
+        <p class="markMovie">${movies.vote_average}</p>
+    </div>
+</div>`
 
-window.addEventListener("load", () => {
-    const firstnameInput = document.getElementById("firstnameInput");
-    document.getElementById("plus").addEventListener("click", (e) => {
-        // les crochets pour selectionner un element par ses attributs
-        if (document.querySelectorAll('[name="firstname"]').length < 10) {
-            const formBis = firstnameInput.cloneNode(true);
-            formBis.removeAttribute("id");
-            const t = formBis.querySelectorAll(["label > input"]);
-            for (let i = 0; i < t.length; i++) {
-                t[i].value = ""
-            }
 
-            const targetEvent = e.target.cloneNode();
-            targetEvent.value = " - ";
-            targetEvent.padding = "0px";
-            targetEvent.title = "Supprimer ce champ";
-            // comprendre ligne 19
-            formBis.appendChild(targetEvent);
-
-            targetEvent.addEventListener("click", (e) => {
-                document.getElementById("formTest").removeChild(e.target.parentElement);
-                e.preventDefault()
-            }, false);
-            // a comprendre ligne 25
-            document.getElementById("formTest").insertBefore(formBis, document.getElementById("bou"));
-        }
-    }, false);
-}, false);
+    < div class=" col-2 carte mb-3" >
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img class="imgMovie" src="${movies.poster_path}" alt="image du film ${movies.original_title}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title titleMovie">${movies.original_title}</h5>
+                    <p class="card-text textMovie">${movies.overview}</p>
+                    <p class="card-text markMovie"><small class="text-muted">${movies.vote_average}</small></p>
+                </div>
+            </div>
+        </div>
+</div >
