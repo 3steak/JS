@@ -1,7 +1,7 @@
 let paper = document.querySelector('.paper');
 let scissors = document.querySelector('.scissors');
 let rock = document.querySelector('.rock');
-let button = document.querySelectorAll('button');
+let button = document.querySelector('.btn');
 
 
 
@@ -13,7 +13,7 @@ function getRandomInt(max) {
 computeur = getRandomInt(3);
 console.log(computeur);
 
-mark.forEach((inputMark) => {
-    let inputMarkValue = Number(inputMark.value);
+btn.forEach((btnValue) => {
+    let btnMarkValue = Number(btn.value);
 })
 
