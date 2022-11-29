@@ -36,7 +36,7 @@ let myObject = fetch('./assets/js/movies.json')
         allMovies.forEach((movies, index) => {
             let htmlSegment =
                 `
-                    <div class="col-2 carte mt-4 contentCard text-center">
+                    <div class="col-lg-2 col-sm-12 carte mt-4 contentCard text-center">
                         <img src="${movies.poster_path}" alt="image du film ${movies.original_title}">
                         <!-- <h2 class="titleMovie">${movies.original_title}</h2> -->
                         <p class="markMovie">${movies.vote_average}</p>
