@@ -36,14 +36,15 @@ let myObject = fetch('./assets/js/movies.json')
         allMovies.forEach((movies, index) => {
             let htmlSegment =
                 `
-                    <div class="col-lg-2 col-sm-12 carte mt-4 contentCard text-center">
-                        <img src="${movies.poster_path}" alt="image du film ${movies.original_title}">
-                        <!-- <h2 class="titleMovie">${movies.original_title}</h2> -->
-                        <p class="markMovie">${movies.vote_average}</p>
-
-                        <p><button class="btn btn-light btn-sm opacity-75" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight${index}" aria-controls="offcanvasRight">Ça parle de quoi ?</button></p>
-
+                    <div class=" carte contentCard  col-12 col-lg-3 m-1 text-center">
                         
+                            <img src="${movies.poster_path}" alt="image du film ${movies.original_title}">
+                            <!-- <h2 class="titleMovie">${movies.original_title}</h2> -->
+                            <p class="markMovie">${movies.vote_average}</p>
+
+                            <p><button class="btn btn-light btn-sm opacity-75" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight${index}" aria-controls="offcanvasRight">Ça parle de quoi ?</button></p>
+
+                    
                     </div>
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight${index}" aria-labelledby="offcanvasRightLabel">
 
