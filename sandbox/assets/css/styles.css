@@ -1,42 +1,83 @@
-/*  MINI RESET pour enlever les marges natives */
 @import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
 
-body,
-html {
-    width: 100%;
-    height: 100%;
-}
 
-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* Pour centrer mon élément */
-    margin: 0 auto;
-    width: 80%;
-}
-
-
-h1 {
-    font-size: 50px;
-    padding: 10px;
+.game {
+    width: 600px;
+    height: 200px;
+    border: 1px solid black;
     margin: auto;
+    margin-top: 100px;
+    overflow: hidden;
+    background: url(/sandbox/assets/img/town.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.computeurChoice,
-.yourChoice,
-.result {
-    margin-bottom: 20px;
+/* --------DINO---------- */
+#dino {
+    width: 50px;
+    height: 50px;
+    background-image: url(/sandbox/assets/img/run-new-gif.gif);
+    background-size: 50px 50px;
+    position: relative;
+    /* saut = reduire le top */
+    top: 148px;
 }
 
-.computeurChoice {
-    background-color: rgba(0, 0, 255, 0.498)
+.jump {
+    animation: jump 0.3s linear;
+
 }
 
-.yourChoice {
-    background-color: rgba(255, 192, 203, 0.505);
+
+/* Je définis l'animation de mon saut */
+@keyframes jump {
+    0% {
+        top: 150px;
+    }
+
+    30% {
+        top: 130px;
+    }
+
+    50% {
+        top: 80px;
+    }
+
+    80% {
+        top: 130px;
+    }
+
+    100% {
+        top: 150px;
+    }
 }
 
-.result {
-    background-color: tomato;
+/* ------------------------------- */
+
+/* --------CACTUS--------------- */
+
+#cactus {
+    width: 20px;
+    height: 40px;
+    position: relative;
+    top: 108px;
+    left: 578px;
+
+    background-image: url(/sandbox/assets/img/cactus.png);
+    background-size: 20px 40px;
+
+    animation: block 1s infinite linear;
+}
+
+
+/*  Animation du cactus */
+@keyframes block {
+    0% {
+        left: 580px;
+    }
+
+    100% {
+        left: -25px;
+    }
 }
