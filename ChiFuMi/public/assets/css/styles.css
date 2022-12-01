@@ -12,8 +12,16 @@ section {
     flex-direction: column;
     justify-content: center;
     /* Pour centrer mon élément */
-    margin: 0 auto;
-    width: 80%;
+    margin: 100px auto;
+    width: 40%;
+    height: auto;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 15px;
 }
 
 
@@ -23,20 +31,24 @@ h1 {
     margin: auto;
 }
 
+h2 {
+    margin: auto;
+    padding: 10px;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
 .computeurChoice,
 .yourChoice,
 .result {
     margin-bottom: 20px;
+    text-align: center;
 }
 
-.computeurChoice {
-    background-color: rgba(0, 0, 255, 0.498)
-}
-
-.yourChoice {
-    background-color: rgba(255, 192, 203, 0.505);
-}
-
-.result {
-    background-color: tomato;
+.chifumi {
+    background: rgba(0, 0, 0, 0.475);
+    border-radius: 25px;
 }
