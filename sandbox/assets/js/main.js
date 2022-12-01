@@ -77,14 +77,7 @@ let isAlive = setInterval(function () {
     //  si cactuleft est à gauche ( entre 0 et 50px) et dinoTop plus bas que 140px ===> Collision
     if (cactusLeft < 30 && cactusLeft > 0 && dinoTop >= 140) {
         // collision
-        // alert('gameover');
 
-        //  SI CHIFUMI LOOOOSE
-        // setTimeout(function () {
-        //     gameOver.style.display = "none"
-        //     startGame.style.display = "block";
-        // }, 4000);
-        // gameOver.style.display = "block";
         chifumi.style.display = "flex";
         game.style.display = "none";
 
@@ -96,9 +89,8 @@ let isAlive = setInterval(function () {
 }, 10);
 
 
-// --------------------------------------------------------------
 
-//  CHIFUMI 
+//  ---------------------CHIFUMI -------------------------
 
 
 
@@ -138,16 +130,35 @@ paperNode.addEventListener('click', () => {
 
 
     if (computeur === rock) {
+
         resultNode.textContent = 'TU CONTINUES ! ';
         setTimeout(function () {
             chifumi.style.display = "none";
             game.style.display = "block";
-        }, 5000);
-    } else if
-        (computeur === paper) {
+            cactus.style.animation = "block 1s infinite linear";
+            resultNode.textContent = '';
+            computeurChoiceNode.textContent = '';
+            yourChoiceNode.textContent = '';
+
+            // TODO  ajouter reprise du compteur
+        }, 4000);
+
+    } else if (computeur === paper) {
+
         resultNode.textContent = "EGALITE, REJOUONS !";
+
     } else {
+
         resultNode.textContent = "GAME OVER !";
+        setTimeout(function () {
+            chifumi.style.display = "none";
+            game.style.display = "block";
+            gameOver.style.display = "block";
+        }, 2000);
+        setTimeout(function () {
+            gameOver.style.display = "none"
+            startGame.style.display = "block";
+        }, 4000);
     }
 })
 
@@ -158,16 +169,34 @@ scissorsNode.addEventListener('click', () => {
     //  il fait alors référence à paper scissors ou rock
     computeurChoiceNode.textContent = choiceToText[computeur];
     yourChoiceNode.textContent = choiceToText[scissorsNode.value];
+
     if (computeur === rock) {
+
         resultNode.textContent = "GAME OVER !"
-    } else if
-        (computeur === paper) {
+        setTimeout(function () {
+            chifumi.style.display = "none";
+            game.style.display = "block";
+            gameOver.style.display = "block";
+        }, 2000);
+        setTimeout(function () {
+            gameOver.style.display = "none"
+            startGame.style.display = "block";
+        }, 4000);
+
+    } else if (computeur === paper) {
+
         resultNode.textContent = 'TU CONTINUES !'
         setTimeout(function () {
             chifumi.style.display = "none";
             game.style.display = "block";
+            cactus.style.animation = "block 1s infinite linear";
+            resultNode.textContent = '';
+            computeurChoiceNode.textContent = '';
+            yourChoiceNode.textContent = '';
         }, 5000);
+
     } else {
+
         resultNode.textContent = "EGALITE, REJOUONS !"
     }
 })
@@ -180,16 +209,36 @@ rockNode.addEventListener('click', () => {
     //  il fait alors référence à paper scissors ou rock
     computeurChoiceNode.textContent = choiceToText[computeur];
     yourChoiceNode.textContent = choiceToText[rockNode.value];
+
     if (computeur === rock) {
+
         resultNode.textContent = "EGALITE, REJOUONS !"
-    } else if
-        (computeur === paper) {
+
+    } else if (computeur === paper) {
+
         resultNode.textContent = "GAME OVER !"
+        setTimeout(function () {
+            chifumi.style.display = "none";
+            game.style.display = "block";
+            gameOver.style.display = "block";
+        }, 2000);
+
+        setTimeout(function () {
+
+            gameOver.style.display = "none"
+            startGame.style.display = "block";
+        }, 4000);
+
     } else {
+
         resultNode.textContent = 'TU CONTINUES ! '
         setTimeout(function () {
             chifumi.style.display = "none";
             game.style.display = "block";
+            cactus.style.animation = "block 1s infinite linear";
+            resultNode.textContent = '';
+            computeurChoiceNode.textContent = '';
+            yourChoiceNode.textContent = '';
         }, 5000);
     }
 
