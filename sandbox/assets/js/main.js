@@ -4,7 +4,6 @@ const cactus = document.getElementById('cactus');
 const score = document.getElementById('score');
 const gameOver = document.getElementById('gameover');
 const startGame = document.getElementById('start');
-console.log(gameOver);
 // fonction jump qui ajoute ma class jump
 
 // ===============================================
@@ -45,20 +44,65 @@ let scoreCounter = () => {
 // ===============================================
 
 
-// Start Game 
-window.addEventListener("keydown", (start) => {
-    // si code de la touche pressé == Space
-    if (start.code == "Space") {
+// Creation d'un stopGame ( gameover)
+// Creation pauseGame
+
+// function StartGame()
+function startanimation(start) {
+
+    // si code de la touche pressé == Enter
+    if (start.code == "Enter") {
         startGame.style.display = "none";
         gameOver.style.display = "none";
 
         // ajouter l'animation au cactus
         cactus.style.animation = "block 1s infinite linear";
+        window.removeEventListener("keydown", startanimation);
 
         // Score 
+        // Incremente mon playerScore
         intervalScore = setInterval(scoreCounter);
     }
-})
+
+}
+// ===============================================
+
+window.addEventListener("keydown", startanimation);
+
+// ===============================================
+
+// Function stopGame 
+function stopGame(stop) {
+
+    setTimeout(function () {
+        chifumi.style.display = "none";
+        game.style.display = "block";
+        gameOver.style.display = "block";
+    }, 2000);
+    setTimeout(function () {
+        gameOver.style.display = "none"
+        startGame.style.display = "block";
+        playerScore = 0;
+        window.addEventListener("keydown", startanimation);
+    }, 4000);
+}
+
+
+// ===============================================
+
+function continueGame(glhf) {
+    setTimeout(function () {
+        chifumi.style.display = "none";
+        game.style.display = "block";
+        cactus.style.animation = "block 1s infinite linear";
+        resultNode.textContent = '';
+        computeurChoiceNode.textContent = '';
+        yourChoiceNode.textContent = '';
+
+        // je reprends mon incrémentation
+        intervalScore = setInterval(scoreCounter);
+    }, 4000);
+};
 
 // ===============================================
 
@@ -76,14 +120,14 @@ let isAlive = setInterval(function () {
     // detect collision 
     //  si cactuleft est à gauche ( entre 0 et 50px) et dinoTop plus bas que 140px ===> Collision
     if (cactusLeft < 30 && cactusLeft > 0 && dinoTop >= 140) {
-        // collision
 
+        // collision
         chifumi.style.display = "flex";
         game.style.display = "none";
 
         cactus.style.animation = "none";
         clearInterval(intervalScore);
-        playerScore = 0;
+
     }
 
 }, 10);
@@ -132,16 +176,7 @@ paperNode.addEventListener('click', () => {
     if (computeur === rock) {
 
         resultNode.textContent = 'TU CONTINUES ! ';
-        setTimeout(function () {
-            chifumi.style.display = "none";
-            game.style.display = "block";
-            cactus.style.animation = "block 1s infinite linear";
-            resultNode.textContent = '';
-            computeurChoiceNode.textContent = '';
-            yourChoiceNode.textContent = '';
-
-            // TODO  ajouter reprise du compteur
-        }, 4000);
+        continueGame();
 
     } else if (computeur === paper) {
 
@@ -150,15 +185,7 @@ paperNode.addEventListener('click', () => {
     } else {
 
         resultNode.textContent = "GAME OVER !";
-        setTimeout(function () {
-            chifumi.style.display = "none";
-            game.style.display = "block";
-            gameOver.style.display = "block";
-        }, 2000);
-        setTimeout(function () {
-            gameOver.style.display = "none"
-            startGame.style.display = "block";
-        }, 4000);
+        stopGame();
     }
 })
 
@@ -173,27 +200,12 @@ scissorsNode.addEventListener('click', () => {
     if (computeur === rock) {
 
         resultNode.textContent = "GAME OVER !"
-        setTimeout(function () {
-            chifumi.style.display = "none";
-            game.style.display = "block";
-            gameOver.style.display = "block";
-        }, 2000);
-        setTimeout(function () {
-            gameOver.style.display = "none"
-            startGame.style.display = "block";
-        }, 4000);
+        stopGame();
 
     } else if (computeur === paper) {
 
         resultNode.textContent = 'TU CONTINUES !'
-        setTimeout(function () {
-            chifumi.style.display = "none";
-            game.style.display = "block";
-            cactus.style.animation = "block 1s infinite linear";
-            resultNode.textContent = '';
-            computeurChoiceNode.textContent = '';
-            yourChoiceNode.textContent = '';
-        }, 5000);
+        continueGame();
 
     } else {
 
@@ -217,29 +229,12 @@ rockNode.addEventListener('click', () => {
     } else if (computeur === paper) {
 
         resultNode.textContent = "GAME OVER !"
-        setTimeout(function () {
-            chifumi.style.display = "none";
-            game.style.display = "block";
-            gameOver.style.display = "block";
-        }, 2000);
-
-        setTimeout(function () {
-
-            gameOver.style.display = "none"
-            startGame.style.display = "block";
-        }, 4000);
+        stopGame();
 
     } else {
 
         resultNode.textContent = 'TU CONTINUES ! '
-        setTimeout(function () {
-            chifumi.style.display = "none";
-            game.style.display = "block";
-            cactus.style.animation = "block 1s infinite linear";
-            resultNode.textContent = '';
-            computeurChoiceNode.textContent = '';
-            yourChoiceNode.textContent = '';
-        }, 5000);
+        continueGame();
     }
 
 })
