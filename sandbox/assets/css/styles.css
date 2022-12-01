@@ -26,7 +26,6 @@
 
 .jump {
     animation: jump 0.3s linear;
-
 }
 
 
@@ -67,7 +66,7 @@
     background-image: url(/sandbox/assets/img/cactus.png);
     background-size: 20px 40px;
 
-    animation: block 1s infinite linear;
+    animation: none;
 }
 
 
@@ -80,4 +79,21 @@
     100% {
         left: -25px;
     }
+}
+
+#score {
+    width: auto;
+    height: auto;
+    position: relative;
+    top: -80px;
+    left: 5px;
+}
+
+#gameover {
+    /* display: none; */
+    font-size: 30px;
+    position: relative;
+    left: calc(50% - 80px);
+    top: calc(50% - 150px);
+    height: 80px;
 }
