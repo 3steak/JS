@@ -4,9 +4,10 @@ const cactus = document.getElementById('cactus');
 const score = document.getElementById('score');
 const gameOver = document.getElementById('gameover');
 const startGame = document.getElementById('start');
-// fonction jump qui ajoute ma class jump
 
 // ===============================================
+// fonction jump qui ajoute ma class jump
+
 function jump() {
     // si if = false ne reset pas le jump
     if (dino.classList != "jump") {
@@ -17,9 +18,10 @@ function jump() {
         }, 300);
     }
 }
+
 // ===============================================
 
-// appelle function jump 
+// Appelle function jump 
 document.addEventListener('keydown', (event) => {
     jump();
 })
@@ -43,9 +45,12 @@ let scoreCounter = () => {
 
 // ===============================================
 
+// Ajout listener sur keydown
+window.addEventListener("keydown", startanimation);
 
-// Creation d'un stopGame ( gameover)
-// Creation pauseGame
+
+// ===============================================
+
 
 // function StartGame()
 function startanimation(start) {
@@ -60,16 +65,14 @@ function startanimation(start) {
         window.removeEventListener("keydown", startanimation);
 
         // Score 
-        // Incremente mon playerScore
+        // Incremente mon playerScore grace fonction ligne 41
         intervalScore = setInterval(scoreCounter);
     }
-
 }
-// ===============================================
 
-window.addEventListener("keydown", startanimation);
 
 // ===============================================
+
 
 // Function stopGame 
 function stopGame(stop) {
@@ -84,6 +87,9 @@ function stopGame(stop) {
         startGame.style.display = "block";
         playerScore = 0;
         window.addEventListener("keydown", startanimation);
+        resultNode.textContent = '';
+        computeurChoiceNode.textContent = '';
+        yourChoiceNode.textContent = '';
     }, 4000);
 }
 
@@ -104,10 +110,11 @@ function continueGame(glhf) {
     }, 4000);
 };
 
+
 // ===============================================
 
 
-//  setinterval permet d'utiliser une fonction toutes les 10ms
+//  setinterval permet d'utiliser une fonction, ici toutes les 10ms
 let isAlive = setInterval(function () {
     // recup position y du dino
     // getcomputeurstyle return toute les valeurs css
@@ -120,12 +127,16 @@ let isAlive = setInterval(function () {
     // detect collision 
     //  si cactuleft est à gauche ( entre 0 et 50px) et dinoTop plus bas que 140px ===> Collision
     if (cactusLeft < 30 && cactusLeft > 0 && dinoTop >= 140) {
+        setTimeout(function () {
+            // Si collision
+            chifumi.style.display = "flex";
+            game.style.display = "none";
+        }, 1000);
 
-        // collision
-        chifumi.style.display = "flex";
-        game.style.display = "none";
 
         cactus.style.animation = "none";
+
+        // Stop incrémentation
         clearInterval(intervalScore);
 
     }
@@ -160,11 +171,9 @@ function getRandomInt(max) {
 const choiceToText = ['Paper', 'Scissors', 'Rock'];
 
 
-
 paperNode.addEventListener('click', () => {
     // je définis ma variable qui me donnera un entier random
     let computeur = getRandomInt(3);
-
 
     // computeur vient jouer sur mon index du tableau
     //  il fait alors référence à paper scissors ou rock

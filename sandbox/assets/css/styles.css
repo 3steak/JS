@@ -1,14 +1,25 @@
 @import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+@import url('https://fonts.cdnfonts.com/css/space-age');
 
+
+
+* {
+    font-family: 'Space Age', sans-serif;
+}
+
+body {
+    background-image: url(/sandbox/assets/img/bodyBackground4.gif);
+    background-size: cover;
+}
 
 .game {
     width: 600px;
     height: 200px;
     border: 1px solid black;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 150px;
     overflow: hidden;
-    background: url(/assets/img/town.gif);
+    background: url(/sandbox/assets/img/backgroundSpace1.gif);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -17,7 +28,7 @@
 #dino {
     width: 50px;
     height: 50px;
-    background-image: url(/assets/img/run-new-gif.gif);
+    background-image: url(/sandbox/assets/img/vaisseau1.gif);
     background-size: 50px 50px;
     position: relative;
     /* saut = reduire le top */
@@ -57,14 +68,14 @@
 /* --------CACTUS--------------- */
 
 #cactus {
-    width: 20px;
+    width: 90px;
     height: 40px;
     position: relative;
     top: 108px;
     left: 578px;
 
-    background-image: url(/assets/img/cactus.png);
-    background-size: 20px 40px;
+    background-image: url(/sandbox/assets/img/asteroid3.gif);
+    background-size: 90px 40px;
 
     animation: none;
 }
@@ -87,48 +98,116 @@
     position: relative;
     top: -80px;
     left: 5px;
+    color: white;
 }
 
 #gameover {
     display: none;
-    font-size: 30px;
+    font-size: 20px;
     position: relative;
     left: calc(50% - 80px);
     top: calc(50% - 150px);
     height: 80px;
+    color: white;
+
+
 }
 
 #start {
-    display: ;
     text-align: center;
-    font-size: 20px;
+    font-size: 15px;
     position: relative;
     left: calc(50% - 300px);
     top: calc(50% - 150px);
-    height: 80px;
+    height: 30px;
+    margin: auto;
+    color: white;
+    background-color: rgb(0, 0, 0, 0.8);
 }
 
+#start p {
+    overflow: hidden;
+    border-right: .15em solid whitesmoke;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
 
+}
 
+.fast {
+    animation: typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+.slow {
+    animation: typing 5s steps(40, end),
+        blink-caret 1.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: whitesmoke;
+    }
+}
 
 
 /*  ---------------  CHIFUMI ------------  */
 .buttons {
     display: flex;
     justify-content: center;
-    justify-content: space-between;
-    padding: 15px;
+    justify-content: space-around;
+    padding: 10px;
 }
 
+.buttons button {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+}
 
-h1 {
-    font-size: 50px;
-    padding: 10px;
-    margin: auto;
+.paper {
+    background-image: url(/sandbox/assets/img/firePlanet.gif);
+    background-size: cover;
+}
+
+.scissors {
+    background-image: url(/sandbox/assets/img/waterPlanet.gif);
+    background-size: cover;
+}
+
+.rock {
+    background-image: url(/sandbox/assets/img/greenPlanet.gif);
+    background-size: cover;
+}
+
+.monster {
+    width: 200px;
+    height: 150px;
+    margin: 0 auto;
 }
 
 h2 {
     margin: auto;
+    text-align: center;
     padding: 10px;
 }
 
@@ -140,18 +219,25 @@ p {
 .computeurChoice,
 .yourChoice,
 .result {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
+.result {
+    font-weight: bold;
+    font-size: 20px;
+}
+
 .chifumi {
-    background: rgba(0, 0, 0, 0.475);
-    border-radius: 25px;
+    background-image: url(/sandbox/assets/img/storm1.gif);
+    background-size: cover;
+    border-radius: 10px;
     display: none;
     flex-direction: column;
     justify-content: center;
     /* Pour centrer mon élément */
-    margin: 100px auto;
+    margin: 30px auto;
     width: 40%;
     height: auto;
+    color: white;
 }
