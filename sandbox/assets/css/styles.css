@@ -2,13 +2,16 @@
 @import url('https://fonts.cdnfonts.com/css/space-age');
 
 
+/* ----------------------- MAIN GAME --------- */
+
 
 * {
     font-family: 'Space Age', sans-serif;
 }
 
+
 body {
-    background-image: url(/sandbox/assets/img/bodyBackground4.gif);
+    background-image: url(/assets/img/bodyBackground4.gif);
     background-size: cover;
 }
 
@@ -19,7 +22,7 @@ body {
     margin: auto;
     margin-top: 150px;
     overflow: hidden;
-    background: url(/sandbox/assets/img/backgroundSpace1.gif);
+    background: url(/assets/img/backgroundSpace1.gif);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -28,7 +31,7 @@ body {
 #dino {
     width: 50px;
     height: 50px;
-    background-image: url(/sandbox/assets/img/vaisseau1.gif);
+    background-image: url(/assets/img/vaisseau1.gif);
     background-size: 50px 50px;
     position: relative;
     /* saut = reduire le top */
@@ -74,7 +77,7 @@ body {
     top: 108px;
     left: 578px;
 
-    background-image: url(/sandbox/assets/img/asteroid3.gif);
+    background-image: url(/assets/img/asteroid3.gif);
     background-size: 90px 40px;
 
     animation: none;
@@ -134,6 +137,13 @@ body {
 
 }
 
+.text p {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+}
+
 .fast {
     animation: typing 3.5s steps(40, end),
         blink-caret .75s step-end infinite;
@@ -169,7 +179,8 @@ body {
 }
 
 
-/*  ---------------  CHIFUMI ------------  */
+/*  -----------------------  CHIFUMI ----------------------  */
+
 .buttons {
     display: flex;
     justify-content: center;
@@ -185,17 +196,17 @@ body {
 }
 
 .paper {
-    background-image: url(/sandbox/assets/img/firePlanet.gif);
+    background-image: url(/assets/img/firePlanet.gif);
     background-size: cover;
 }
 
 .scissors {
-    background-image: url(/sandbox/assets/img/waterPlanet.gif);
+    background-image: url(/assets/img/waterPlanet.gif);
     background-size: cover;
 }
 
 .rock {
-    background-image: url(/sandbox/assets/img/greenPlanet.gif);
+    background-image: url(/assets/img/greenPlanet.gif);
     background-size: cover;
 }
 
@@ -205,11 +216,7 @@ body {
     margin: 0 auto;
 }
 
-h2 {
-    margin: auto;
-    text-align: center;
-    padding: 10px;
-}
+
 
 p {
     text-align: center;
@@ -229,7 +236,7 @@ p {
 }
 
 .chifumi {
-    background-image: url(/sandbox/assets/img/storm1.gif);
+    background-image: url(/assets/img/storm1.gif);
     background-size: cover;
     border-radius: 10px;
     display: none;
@@ -240,4 +247,702 @@ p {
     width: 40%;
     height: auto;
     color: white;
+}
+
+
+
+/*    ANIMATION D'ENTREE ET SORTIE (ANIMISTA) */
+
+/* ANIMATION ARRIVEE CHIFUMI */
+.slide-in-elliptic-top-fwd {
+    -webkit-animation: slide-in-elliptic-top-fwd 1s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    animation: slide-in-elliptic-top-fwd 1s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+}
+
+@-webkit-keyframes slide-in-elliptic-top-fwd {
+    0% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-elliptic-top-fwd {
+    0% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+}
+
+/*  FIN  */
+
+/*  ANIMATION DE SORTIE DU CHIFUMI */
+
+.slide-out-elliptic-top-bck {
+    -webkit-animation: slide-out-elliptic-top-bck 0.7s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+    animation: slide-out-elliptic-top-bck 0.7s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+
+@-webkit-keyframes slide-out-elliptic-top-bck {
+    0% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out-elliptic-top-bck {
+    0% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 1;
+    }
+}
+
+/*   FIN    */
+
+/*  ANIMTATION D'ARRIVEE DU MONSTRE */
+
+.flicker-in-1 {
+    -webkit-animation: flicker-in-1 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: flicker-in-1 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes flicker-in-1 {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    10.1% {
+        opacity: 1;
+    }
+
+    10.2% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    20.1% {
+        opacity: 1;
+    }
+
+    20.6% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    30.1% {
+        opacity: 1;
+    }
+
+    30.5% {
+        opacity: 1;
+    }
+
+    30.6% {
+        opacity: 0;
+    }
+
+    45% {
+        opacity: 0;
+    }
+
+    45.1% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 1;
+    }
+
+    55.1% {
+        opacity: 0;
+    }
+
+    57% {
+        opacity: 0;
+    }
+
+    57.1% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    60.1% {
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 0;
+    }
+
+    65.1% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    75.1% {
+        opacity: 0;
+    }
+
+    77% {
+        opacity: 0;
+    }
+
+    77.1% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    85.1% {
+        opacity: 0;
+    }
+
+    86% {
+        opacity: 0;
+    }
+
+    86.1% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes flicker-in-1 {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    10.1% {
+        opacity: 1;
+    }
+
+    10.2% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    20.1% {
+        opacity: 1;
+    }
+
+    20.6% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    30.1% {
+        opacity: 1;
+    }
+
+    30.5% {
+        opacity: 1;
+    }
+
+    30.6% {
+        opacity: 0;
+    }
+
+    45% {
+        opacity: 0;
+    }
+
+    45.1% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 1;
+    }
+
+    55.1% {
+        opacity: 0;
+    }
+
+    57% {
+        opacity: 0;
+    }
+
+    57.1% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    60.1% {
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 0;
+    }
+
+    65.1% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    75.1% {
+        opacity: 0;
+    }
+
+    77% {
+        opacity: 0;
+    }
+
+    77.1% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    85.1% {
+        opacity: 0;
+    }
+
+    86% {
+        opacity: 0;
+    }
+
+    86.1% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*  ANIMATION DE SORTIE DU MONSTRE */
+
+.flicker-out-1 {
+    -webkit-animation: flicker-out-1 2s linear both;
+    animation: flicker-out-1 2s linear both;
+}
+
+@-webkit-keyframes flicker-out-1 {
+    0% {
+        opacity: 1;
+    }
+
+    13.9% {
+        opacity: 1;
+    }
+
+    14% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    14.9% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    22.9% {
+        opacity: 1;
+    }
+
+    23% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    24.9% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    34.9% {
+        opacity: 1;
+    }
+
+    35% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    39.9% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    42.9% {
+        opacity: 1;
+    }
+
+    43% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    44.9% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    45% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    54.9% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    69.4% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    69.5% {
+        opacity: 1;
+    }
+
+    69.9% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    79.4% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    79.9% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    89.8% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    89.9% {
+        opacity: 1;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    90% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes flicker-out-1 {
+    0% {
+        opacity: 1;
+    }
+
+    13.9% {
+        opacity: 1;
+    }
+
+    14% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    14.9% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    22.9% {
+        opacity: 1;
+    }
+
+    23% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    24.9% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    34.9% {
+        opacity: 1;
+    }
+
+    35% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    39.9% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    42.9% {
+        opacity: 1;
+    }
+
+    43% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    44.9% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    45% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    54.9% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    69.4% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    69.5% {
+        opacity: 1;
+    }
+
+    69.9% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    79.4% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    79.9% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    89.8% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    89.9% {
+        opacity: 1;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    90% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/*   FIN  */
+
+
+/*  ANIMATION DE .game APRES LE CHIFUMI */
+
+.slide-in-bck-center {
+    animation: slide-in-bck-center .7s cubic-bezier(.25, .46, .45, .94) both
+}
+
+
+@keyframes slide-in-bck-center {
+    0% {
+        transform: translateZ(600px);
+        opacity: 0
+    }
+
+    100% {
+        transform: translateZ(0);
+        opacity: 1
+    }
 }

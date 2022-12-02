@@ -4,7 +4,7 @@ const cactus = document.getElementById('cactus');
 const score = document.getElementById('score');
 const gameOver = document.getElementById('gameover');
 const startGame = document.getElementById('start');
-
+const monster = document.querySelector('.monster');
 // ===============================================
 // fonction jump qui ajoute ma class jump
 
@@ -76,7 +76,10 @@ function startanimation(start) {
 
 // Function stopGame 
 function stopGame(stop) {
-
+    monster.classList.add('flicker-out-1');
+    setTimeout(function () {
+        chifumi.classList.add("slide-out-elliptic-top-bck");
+    }, 1500);
     setTimeout(function () {
         chifumi.style.display = "none";
         game.style.display = "block";
@@ -90,13 +93,19 @@ function stopGame(stop) {
         resultNode.textContent = '';
         computeurChoiceNode.textContent = '';
         yourChoiceNode.textContent = '';
-    }, 4000);
+        chifumi.classList.remove("slide-out-elliptic-top-bck");
+        monster.classList.remove('flicker-out-1');
+    }, 2500);
 }
 
 
 // ===============================================
 
 function continueGame(glhf) {
+    monster.classList.add('flicker-out-1');
+    setTimeout(function () {
+        chifumi.classList.add("slide-out-elliptic-top-bck");
+    }, 1500);
     setTimeout(function () {
         chifumi.style.display = "none";
         game.style.display = "block";
@@ -104,10 +113,11 @@ function continueGame(glhf) {
         resultNode.textContent = '';
         computeurChoiceNode.textContent = '';
         yourChoiceNode.textContent = '';
-
+        chifumi.classList.remove("slide-out-elliptic-top-bck");
+        monster.classList.remove('flicker-out-1');
         // je reprends mon incrémentation
         intervalScore = setInterval(scoreCounter);
-    }, 4000);
+    }, 2500);
 };
 
 
@@ -127,10 +137,12 @@ let isAlive = setInterval(function () {
     // detect collision 
     //  si cactuleft est à gauche ( entre 0 et 50px) et dinoTop plus bas que 140px ===> Collision
     if (cactusLeft < 30 && cactusLeft > 0 && dinoTop >= 140) {
+        dino.style.backgroundImage = "url(/assets/img/explosion2.gif)";
         setTimeout(function () {
             // Si collision
             chifumi.style.display = "flex";
             game.style.display = "none";
+            dino.style.backgroundImage = "url(/assets/img/vaisseau1.gif)";
         }, 1000);
 
 
