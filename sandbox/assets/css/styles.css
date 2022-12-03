@@ -11,7 +11,7 @@
 
 
 body {
-    background-image: url(/assets/img/bodyBackground4.gif);
+    background-image: url(/sandbox/assets/img/bodyBackground4.gif);
     background-size: cover;
 }
 
@@ -22,7 +22,7 @@ body {
     margin: auto;
     margin-top: 150px;
     overflow: hidden;
-    background: url(/assets/img/backgroundSpace1.gif);
+    background: url(/sandbox/assets/img/backgroundSpace1.gif);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -31,7 +31,7 @@ body {
 #dino {
     width: 50px;
     height: 50px;
-    background-image: url(/assets/img/vaisseau1.gif);
+    background-image: url(/sandbox/assets/img/vaisseau1.gif);
     background-size: 50px 50px;
     position: relative;
     /* saut = reduire le top */
@@ -77,7 +77,7 @@ body {
     top: 108px;
     left: 578px;
 
-    background-image: url(/assets/img/asteroid3.gif);
+    background-image: url(/sandbox/assets/img/asteroid3.gif);
     background-size: 90px 40px;
 
     animation: none;
@@ -196,17 +196,17 @@ body {
 }
 
 .paper {
-    background-image: url(/assets/img/firePlanet.gif);
+    background-image: url(/sandbox/assets/img/firePlanet.gif);
     background-size: cover;
 }
 
 .scissors {
-    background-image: url(/assets/img/waterPlanet.gif);
+    background-image: url(/sandbox/assets/img/waterPlanet.gif);
     background-size: cover;
 }
 
 .rock {
-    background-image: url(/assets/img/greenPlanet.gif);
+    background-image: url(/sandbox/assets/img/greenPlanet.gif);
     background-size: cover;
 }
 
@@ -236,7 +236,7 @@ p {
 }
 
 .chifumi {
-    background-image: url(/assets/img/storm1.gif);
+    background-image: url(/sandbox/assets/img/storm1.gif);
     background-size: cover;
     border-radius: 10px;
     display: none;
