@@ -11,7 +11,7 @@
 
 
 body {
-    background-image: url(/sandbox/assets/img/bodyBackground4.gif);
+    background-image: url(/assets/img/bodyBackground4.gif);
     background-size: cover;
 }
 
@@ -22,7 +22,7 @@ body {
     margin: auto;
     margin-top: 150px;
     overflow: hidden;
-    background: url(/sandbox/assets/img/backgroundSpace1.gif);
+    background: url(/assets/img/backgroundSpace1.gif);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -31,7 +31,7 @@ body {
 #dino {
     width: 50px;
     height: 50px;
-    background-image: url(/sandbox/assets/img/vaisseau1.gif);
+    background-image: url(/assets/img/vaisseau1.gif);
     background-size: 50px 50px;
     position: relative;
     /* saut = reduire le top */
@@ -75,13 +75,38 @@ body {
     height: 40px;
     position: relative;
     top: 108px;
-    left: 578px;
+    left: 600px;
 
-    background-image: url(/sandbox/assets/img/asteroid3.gif);
+    background-image: url(/assets/img/asteroid3.gif);
     background-size: 90px 40px;
 
     animation: none;
 }
+
+/* --------ENEMY---------- */
+
+#enemy {
+    width: 90px;
+    height: 40px;
+    position: relative;
+    top: 30px;
+    left: 590px;
+    background-image: url(/assets/img/enemy1.gif);
+    background-size: 90px 40px;
+    animation: none;
+}
+
+@keyframes rocket {
+    0% {
+        left: 580px;
+    }
+
+    100% {
+        left: -25px;
+    }
+}
+
+/* -------------------- */
 
 
 /*  Animation du cactus */
@@ -95,12 +120,14 @@ body {
     }
 }
 
+/* -------SCORE ------- */
+
 #score {
     width: auto;
     height: auto;
     position: relative;
-    top: -80px;
-    left: 5px;
+    top: -125px;
+    left: 10px;
     color: white;
 }
 
@@ -196,17 +223,17 @@ body {
 }
 
 .paper {
-    background-image: url(/sandbox/assets/img/firePlanet.gif);
+    background-image: url(/assets/img/firePlanet.gif);
     background-size: cover;
 }
 
 .scissors {
-    background-image: url(/sandbox/assets/img/waterPlanet.gif);
+    background-image: url(/assets/img/waterPlanet.gif);
     background-size: cover;
 }
 
 .rock {
-    background-image: url(/sandbox/assets/img/greenPlanet.gif);
+    background-image: url(/assets/img/greenPlanet.gif);
     background-size: cover;
 }
 
@@ -236,7 +263,7 @@ p {
 }
 
 .chifumi {
-    background-image: url(/sandbox/assets/img/storm1.gif);
+    background-image: url(/assets/img/storm1.gif);
     background-size: cover;
     border-radius: 10px;
     display: none;

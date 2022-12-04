@@ -1,6 +1,7 @@
 const game = document.querySelector('.game');
 const dino = document.getElementById('dino');
 const cactus = document.getElementById('cactus');
+const enemy = document.getElementById('enemy');
 const score = document.getElementById('score');
 const gameOver = document.getElementById('gameover');
 const startGame = document.getElementById('start');
@@ -62,8 +63,12 @@ function startanimation(start) {
 
         // ajouter l'animation au cactus
         cactus.style.animation = "block 1s infinite linear";
+        enemy.style.animation = "block 1s infinite linear";
         window.removeEventListener("keydown", startanimation);
+        // ajout rocket apres X ms second
+        // setTimeout(function () {
 
+        // }, 5000);
         // Score 
         // Incremente mon playerScore grace fonction ligne 41
         intervalScore = setInterval(scoreCounter);
@@ -96,6 +101,7 @@ function stopGame(stop) {
         chifumi.classList.remove("slide-out-elliptic-top-bck");
         monster.classList.remove('flicker-out-1');
     }, 3500);
+
 }
 
 
@@ -105,11 +111,12 @@ function continueGame(glhf) {
     monster.classList.add('flicker-out-1');
     setTimeout(function () {
         chifumi.classList.add("slide-out-elliptic-top-bck");
-    }, 1500);
+    }, 2000);
     setTimeout(function () {
         chifumi.style.display = "none";
         game.style.display = "block";
-        cactus.style.animation = "block 1s infinite linear";
+        cactus.style.animation = "block 1.2s infinite linear";
+        enemy.style.animation = "block 1.2s infinite linear";
         resultNode.textContent = '';
         computeurChoiceNode.textContent = '';
         yourChoiceNode.textContent = '';
@@ -118,6 +125,9 @@ function continueGame(glhf) {
         // je reprends mon incrémentation
         intervalScore = setInterval(scoreCounter);
     }, 3500);
+    // setTimeout(function () {
+
+    // }, 8500);
 };
 
 
@@ -134,19 +144,27 @@ let isAlive = setInterval(function () {
     // recup position left de notre block cactus
     let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue('left'))
 
+    //  recup position left de enemy
+
+
+    // PROBLEME ligne149
+    let enemyLeft = parseInt(window.getComputedStyle(enemy).getPropertyValue('left'))
+
+
     // detect collision 
     //  si cactuleft est à gauche ( entre 0 et 50px) et dinoTop plus bas que 140px ===> Collision
     if (cactusLeft < 30 && cactusLeft > 0 && dinoTop >= 140) {
-        dino.style.backgroundImage = "url(/sandbox/assets/img/explosion2.gif)";
+        dino.style.backgroundImage = "url(/assets/img/explosion2.gif)";
         setTimeout(function () {
             // Si collision
             chifumi.style.display = "flex";
             game.style.display = "none";
-            dino.style.backgroundImage = "url(/sandbox/assets/img/vaisseau1.gif)";
+            dino.style.backgroundImage = "url(/assets/img/vaisseau1.gif)";
         }, 1000);
 
 
         cactus.style.animation = "none";
+        enemy.style.animation = "none";
 
         // Stop incrémentation
         clearInterval(intervalScore);
