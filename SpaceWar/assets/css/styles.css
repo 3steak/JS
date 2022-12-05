@@ -1,0 +1,1095 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+@import url('https://fonts.cdnfonts.com/css/space-age');
+
+* {
+    font-family: 'Space Age', sans-serif;
+}
+
+
+body {
+    background-image: url(/SpaceWar/assets/img/bodyBackground4.gif);
+    background-size: cover;
+    overflow: hidden;
+}
+
+/* -----------HOME----------- */
+
+.home {
+    width: 600px;
+    height: 300px;
+    margin: auto;
+    margin-top: 150px;
+    overflow: hidden;
+    background-image: url(/SpaceWar/assets/img/home2.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.home_h1 {
+    position: relative;
+    font-weight: 900;
+    font-size: 1.6rem;
+    top: 100px;
+    left: 80px;
+    background: rgb(245, 245, 245, 0.3);
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+
+
+a {
+    align-items: flex-end;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    top: 10px;
+    left: 20px;
+}
+
+.git {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    vertical-align: middle;
+    margin: 5px;
+}
+
+
+.play_btn {
+    position: relative;
+    top: 200px;
+    left: 250px;
+    background: rgb(245, 245, 245, 0.3);
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+}
+
+/* -------- MAIN GAME -------------- */
+.game {
+    width: 600px;
+    height: 200px;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 150px;
+    overflow: hidden;
+    background: url(/SpaceWar/assets/img/backgroundSpace1.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+/* --------DINO---------- */
+#dino {
+    width: 50px;
+    height: 50px;
+    background-image: url(/SpaceWar/assets/img/vaisseau1.gif);
+    background-size: 50px 50px;
+    position: relative;
+    /* saut = reduire le top */
+    top: 148px;
+}
+
+.jump {
+    animation: jump 0.3s linear;
+}
+
+
+/* Je définis l'animation de mon saut */
+@keyframes jump {
+    0% {
+        top: 150px;
+    }
+
+    30% {
+        top: 130px;
+    }
+
+    50% {
+        top: 80px;
+    }
+
+    80% {
+        top: 130px;
+    }
+
+    100% {
+        top: 150px;
+    }
+}
+
+/* ------------------------------- */
+
+/* --------CACTUS--------------- */
+
+#cactus {
+    width: 90px;
+    height: 40px;
+    position: relative;
+    top: 108px;
+    left: 600px;
+
+    background-image: url(/SpaceWar/assets/img/asteroid3.gif);
+    background-size: 90px 40px;
+
+    animation: none;
+}
+
+/* --------ENEMY---------- */
+
+#enemy {
+    width: 90px;
+    height: 40px;
+    position: relative;
+    top: 30px;
+    left: 600px;
+    background-image: url(/SpaceWar/assets/img/enemy1.gif);
+    background-size: 90px 40px;
+    animation: none;
+    animation-iteration-count: 2;
+
+}
+
+/*  animation de la rocket qui galère */
+@keyframes rocket {
+    0% {
+        left: 580px;
+    }
+
+    100% {
+        left: -25px;
+    }
+}
+
+/* -------------------- */
+
+
+/*  Animation de la fusée */
+@keyframes block {
+    0% {
+        left: 580px;
+    }
+
+    100% {
+        left: -25px;
+    }
+}
+
+/* -------SCORE ------- */
+
+#score {
+    width: auto;
+    height: auto;
+    position: relative;
+    top: -125px;
+    left: 10px;
+    color: white;
+}
+
+
+#gameover {
+    display: none;
+    font-size: 20px;
+    position: relative;
+    left: calc(50% - 80px);
+    top: calc(50% - 150px);
+    height: 80px;
+    color: white;
+}
+
+/* ---ANIMATION DU GAME OVER--- */
+
+.blink-1 {
+    animation: blink-1 1s both
+}
+
+@keyframes blink-1 {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1
+    }
+
+    25%,
+    75% {
+        opacity: 0
+    }
+}
+
+/* ---------- */
+
+
+#start {
+    text-align: center;
+    font-size: 15px;
+    position: relative;
+    left: calc(50% - 300px);
+    top: calc(50% - 150px);
+    height: 30px;
+    margin: auto;
+    color: white;
+    background-color: rgb(0, 0, 0, 0.8);
+}
+
+#start p {
+    overflow: hidden;
+    border-right: .15em solid whitesmoke;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+
+}
+
+.text p {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+}
+
+.fast {
+    animation: typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+.slow {
+    animation: typing 5s steps(40, end),
+        blink-caret 1.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: whitesmoke;
+    }
+}
+
+
+/*  -----------------------  CHIFUMI ----------------------  */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.buttons button {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+}
+
+.paper {
+    background-image: url(/SpaceWar/assets/img/firePlanet.gif);
+    background-size: cover;
+}
+
+.scissors {
+    background-image: url(/SpaceWar/assets/img/waterPlanet.gif);
+    background-size: cover;
+}
+
+.rock {
+    background-image: url(/SpaceWar/assets/img/greenPlanet.gif);
+    background-size: cover;
+}
+
+.monster {
+    width: 200px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+
+
+p {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.computeurChoice,
+.yourChoice,
+.result {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.result {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.chifumi {
+    background-image: url(/SpaceWar/assets/img/storm1.gif);
+    background-size: cover;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    /* Pour centrer mon élément */
+    margin: 30px auto;
+    width: 40%;
+    height: auto;
+    color: white;
+}
+
+
+
+/*    ANIMATION D'ENTREE ET SORTIE (ANIMISTA) */
+
+/* ANIMATION ARRIVEE CHIFUMI */
+.slide-in-elliptic-top-fwd {
+    -webkit-animation: slide-in-elliptic-top-fwd 1s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    animation: slide-in-elliptic-top-fwd 1s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+}
+
+@-webkit-keyframes slide-in-elliptic-top-fwd {
+    0% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-elliptic-top-fwd {
+    0% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+}
+
+/*  FIN  */
+
+/*  ANIMATION DE SORTIE DU CHIFUMI */
+
+.slide-out-elliptic-top-bck {
+    -webkit-animation: slide-out-elliptic-top-bck 0.7s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+    animation: slide-out-elliptic-top-bck 0.7s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+
+@-webkit-keyframes slide-out-elliptic-top-bck {
+    0% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out-elliptic-top-bck {
+    0% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 1;
+    }
+}
+
+/*   FIN    */
+
+
+/*  ANIMTATION D'ARRIVEE DU MONSTRE */
+
+.flicker-in-1 {
+    -webkit-animation: flicker-in-1 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: flicker-in-1 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes flicker-in-1 {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    10.1% {
+        opacity: 1;
+    }
+
+    10.2% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    20.1% {
+        opacity: 1;
+    }
+
+    20.6% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    30.1% {
+        opacity: 1;
+    }
+
+    30.5% {
+        opacity: 1;
+    }
+
+    30.6% {
+        opacity: 0;
+    }
+
+    45% {
+        opacity: 0;
+    }
+
+    45.1% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 1;
+    }
+
+    55.1% {
+        opacity: 0;
+    }
+
+    57% {
+        opacity: 0;
+    }
+
+    57.1% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    60.1% {
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 0;
+    }
+
+    65.1% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    75.1% {
+        opacity: 0;
+    }
+
+    77% {
+        opacity: 0;
+    }
+
+    77.1% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    85.1% {
+        opacity: 0;
+    }
+
+    86% {
+        opacity: 0;
+    }
+
+    86.1% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes flicker-in-1 {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    10.1% {
+        opacity: 1;
+    }
+
+    10.2% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    20.1% {
+        opacity: 1;
+    }
+
+    20.6% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    30.1% {
+        opacity: 1;
+    }
+
+    30.5% {
+        opacity: 1;
+    }
+
+    30.6% {
+        opacity: 0;
+    }
+
+    45% {
+        opacity: 0;
+    }
+
+    45.1% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 1;
+    }
+
+    55.1% {
+        opacity: 0;
+    }
+
+    57% {
+        opacity: 0;
+    }
+
+    57.1% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    60.1% {
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 0;
+    }
+
+    65.1% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    75.1% {
+        opacity: 0;
+    }
+
+    77% {
+        opacity: 0;
+    }
+
+    77.1% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    85.1% {
+        opacity: 0;
+    }
+
+    86% {
+        opacity: 0;
+    }
+
+    86.1% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*  ANIMATION DE SORTIE DU MONSTRE */
+
+.flicker-out-1 {
+    -webkit-animation: flicker-out-1 2s linear both;
+    animation: flicker-out-1 2s linear both;
+}
+
+@-webkit-keyframes flicker-out-1 {
+    0% {
+        opacity: 1;
+    }
+
+    13.9% {
+        opacity: 1;
+    }
+
+    14% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    14.9% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    22.9% {
+        opacity: 1;
+    }
+
+    23% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    24.9% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    34.9% {
+        opacity: 1;
+    }
+
+    35% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    39.9% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    42.9% {
+        opacity: 1;
+    }
+
+    43% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    44.9% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    45% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    54.9% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    69.4% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    69.5% {
+        opacity: 1;
+    }
+
+    69.9% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    79.4% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    79.9% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    89.8% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    89.9% {
+        opacity: 1;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    90% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes flicker-out-1 {
+    0% {
+        opacity: 1;
+    }
+
+    13.9% {
+        opacity: 1;
+    }
+
+    14% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    14.9% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    22.9% {
+        opacity: 1;
+    }
+
+    23% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    24.9% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    34.9% {
+        opacity: 1;
+    }
+
+    35% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    39.9% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    42.9% {
+        opacity: 1;
+    }
+
+    43% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    44.9% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    45% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    54.9% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    69.4% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    69.5% {
+        opacity: 1;
+    }
+
+    69.9% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    79.4% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    79.9% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    89.8% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    89.9% {
+        opacity: 1;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    90% {
+        opacity: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/*   FIN  */
+
+
+/*  ANIMATION DE .game APRES LE CHIFUMI */
+
+.slide-in-bck-center {
+    animation: slide-in-bck-center .7s cubic-bezier(.25, .46, .45, .94) both
+}
+
+
+@keyframes slide-in-bck-center {
+    0% {
+        transform: translateZ(600px);
+        opacity: 0
+    }
+
+    100% {
+        transform: translateZ(0);
+        opacity: 1
+    }
+}
+
+/* ---- ANIMATION DU SCORE ----*/
+.jello-vertical {
+    animation: jello-vertical .9s ease-in both
+}
+
+
+@keyframes jello-vertical {
+    0% {
+        transform: scale3d(1, 1, 1)
+    }
+
+    30% {
+        transform: scale3d(.75, 1.25, 1)
+    }
+
+    40% {
+        transform: scale3d(1.25, .75, 1)
+    }
+
+    50% {
+        transform: scale3d(.85, 1.15, 1)
+    }
+
+    65% {
+        transform: scale3d(1.05, .95, 1)
+    }
+
+    75% {
+        transform: scale3d(.95, 1.05, 1)
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1)
+    }
+}
+
+/*  -------------- */
+
+
+/*  MEDIA SCREEN  */
