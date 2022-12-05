@@ -1,4 +1,5 @@
 //------------------  HOME -------------
+
 const home = document.querySelector('.home');
 const play = document.querySelector('.play_btn');
 
@@ -19,6 +20,7 @@ const score = document.getElementById('score');
 const gameOver = document.getElementById('gameover');
 const startGame = document.getElementById('start');
 const monster = document.querySelector('.monster');
+
 // ===============================================
 
 // fonction jump qui ajoute ma class jump
@@ -36,50 +38,48 @@ function jump() {
 // ===============================================
 
 // Appelle function jump 
-document.addEventListener('keydown', (event) => {
+document.addEventListener("keydown", (event) => {
     jump();
 })
-document.addEventListener('touchstart', (touch) => {
+document.addEventListener("touchstart", (touch) => {
     jump();
 })
 // ===============================================
 
 
-// Variable score
+// ============     Variable et fonction score      ===================
 let interval = null;
 let playerScore = 0;
 
-
-// ===============================================
-
-
-// fonction score
 let scoreCounter = () => {
     playerScore++;
     score.innerHTML = `Score :${playerScore}`;
 }
 
+
 // ===============================================
 
-// Ajout listener sur keydown et touchEvent
+
+// Ajout listener sur keydown et touchEvent (mobile) qui attende la fonction startanimation
 window.addEventListener("keydown", startanimation);
-window.addEventListener('touchEvent', startanimation);
+window.addEventListener("touchstart", startanimation);
 
 
 // ===============================================
-
 
 // function StartGame()
 function startanimation(start) {
-
+    console.log(start.TouchList);
     // si code de la touche pressé == Enter
-    if (start.code == "Enter" || TouchEvent == true) {
+    //  ajouter TouchList pour start sur mobile
+    if (start.code == "Enter") {
         startGame.style.display = "none";
         gameOver.style.display = "none";
 
         // ajouter l'animation au cactus
         cactus.style.animation = "block 1s infinite linear";
         window.removeEventListener("keydown", startanimation);
+        window.removeEventListener("touchstart", startanimation);
         // ajout rocket apres X ms second
         setTimeout(function () {
             // enemy.style.animation = "rocket 1s infinite linear";
@@ -98,6 +98,7 @@ function startanimation(start) {
 // Function stopGame 
 function stopGame(stop) {
     monster.classList.add('flicker-out-1');
+    chifumi.classList.add("red");
     setTimeout(function () {
         chifumi.classList.add("slide-out-elliptic-top-bck");
     }, 2000);
@@ -111,13 +112,14 @@ function stopGame(stop) {
         startGame.style.display = "block";
         playerScore = 0;
         window.addEventListener("keydown", startanimation);
+        window.addEventListener("touchstart", startanimation);
         resultNode.textContent = '';
         computeurChoiceNode.textContent = '';
         yourChoiceNode.textContent = '';
         chifumi.classList.remove("slide-out-elliptic-top-bck");
         monster.classList.remove('flicker-out-1');
+        chifumi.classList.remove("red");
     }, 3500);
-
 }
 
 
@@ -126,6 +128,7 @@ function stopGame(stop) {
 //  Function continueGame
 function continueGame(glhf) {
     monster.classList.add('flicker-out-1');
+    chifumi.classList.add("green");
     setTimeout(function () {
         chifumi.classList.add("slide-out-elliptic-top-bck");
     }, 2000);
@@ -139,6 +142,7 @@ function continueGame(glhf) {
         yourChoiceNode.textContent = '';
         chifumi.classList.remove("slide-out-elliptic-top-bck");
         monster.classList.remove('flicker-out-1');
+        chifumi.classList.remove("green");
         // je reprends mon incrémentation
         intervalScore = setInterval(scoreCounter);
     }, 3500);
@@ -150,9 +154,9 @@ function continueGame(glhf) {
 //  COLLISION
 
 //  setinterval permet d'utiliser une fonction, ici toutes les 10ms
-let isAlive = setInterval(function () {
+setInterval(function () {
     // recup position y du dino
-    // getcomputeurstyle return toute les valeurs css
+    // getcomputeurstyle return toutes les valeurs css
     // get propertyValue return la valeur du css ciblé
     let dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue("top"));
 
@@ -173,7 +177,6 @@ let isAlive = setInterval(function () {
             game.style.display = "none";
             dino.style.backgroundImage = "url(/SpaceWar/assets/img/vaisseau1.gif)";
         }, 1000);
-
 
         cactus.style.animation = "none";
         enemy.style.animation = "none";
@@ -209,7 +212,7 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-// mon tableau a donc pour index 0 la key paper etc.. 
+// mon tableau a donc pour index 0 la key Feu etc.. 
 const choiceToText = ['Feu', 'Eau', 'Plante'];
 
 
@@ -230,8 +233,11 @@ paperNode.addEventListener('click', () => {
         continueGame();
 
     } else if (computeur === paper) {
-
+        chifumi.classList.add("blue");
         resultNode.textContent = "EGALITE, REJOUONS !";
+        setTimeout(function () {
+            chifumi.classList.add("slide-out-elliptic-top-bck");
+        }, 2000);
 
     } else {
 
@@ -259,8 +265,12 @@ scissorsNode.addEventListener('click', () => {
         continueGame();
 
     } else {
-
+        chifumi.classList.add("blue");
         resultNode.textContent = "EGALITE, REJOUONS !"
+        setTimeout(function () {
+            chifumi.classList.add("slide-out-elliptic-top-bck");
+        }, 2000);
+
     }
 })
 
@@ -276,6 +286,11 @@ rockNode.addEventListener('click', () => {
     if (computeur === rock) {
 
         resultNode.textContent = "EGALITE, REJOUONS !"
+        chifumi.classList.add("blue");
+        setTimeout(function () {
+            chifumi.classList.remove("blue");
+        }, 1500);
+
 
     } else if (computeur === paper) {
 
