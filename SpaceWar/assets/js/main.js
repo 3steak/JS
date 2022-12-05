@@ -1,4 +1,4 @@
-//--------HOME-----------
+//------------------  HOME -------------
 const home = document.querySelector('.home');
 const play = document.querySelector('.play_btn');
 
@@ -20,8 +20,8 @@ const gameOver = document.getElementById('gameover');
 const startGame = document.getElementById('start');
 const monster = document.querySelector('.monster');
 // ===============================================
-// fonction jump qui ajoute ma class jump
 
+// fonction jump qui ajoute ma class jump
 function jump() {
     // si if = false ne reset pas le jump
     if (dino.classList != "jump") {
@@ -61,7 +61,7 @@ let scoreCounter = () => {
 
 // ===============================================
 
-// Ajout listener sur keydown
+// Ajout listener sur keydown et touchEvent
 window.addEventListener("keydown", startanimation);
 window.addEventListener('touchEvent', startanimation);
 
@@ -100,12 +100,12 @@ function stopGame(stop) {
     monster.classList.add('flicker-out-1');
     setTimeout(function () {
         chifumi.classList.add("slide-out-elliptic-top-bck");
-    }, 1500);
+    }, 2000);
     setTimeout(function () {
         chifumi.style.display = "none";
         game.style.display = "block";
         gameOver.style.display = "block";
-    }, 2000);
+    }, 2500);
     setTimeout(function () {
         gameOver.style.display = "none"
         startGame.style.display = "block";
@@ -123,6 +123,7 @@ function stopGame(stop) {
 
 // ===============================================
 
+//  Function continueGame
 function continueGame(glhf) {
     monster.classList.add('flicker-out-1');
     setTimeout(function () {
@@ -141,14 +142,12 @@ function continueGame(glhf) {
         // je reprends mon incrémentation
         intervalScore = setInterval(scoreCounter);
     }, 3500);
-    // setTimeout(function () {
-
-    // }, 8500);
 };
 
 
 // ===============================================
 
+//  COLLISION
 
 //  setinterval permet d'utiliser une fonction, ici toutes les 10ms
 let isAlive = setInterval(function () {
@@ -160,11 +159,8 @@ let isAlive = setInterval(function () {
     // recup position left de notre block cactus
     let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue('left'));
 
-    //  recup position left de enemy
 
-
-    // PROBLEME ligne149
-    let enemyLeft = parseInt(window.getComputedStyle(enemy).getPropertyValue('left'));
+    // let enemyLeft = parseInt(window.getComputedStyle(enemy).getPropertyValue('left'));
 
 
     // detect collision 
