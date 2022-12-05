@@ -1,9 +1,6 @@
 @import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
 @import url('https://fonts.cdnfonts.com/css/space-age');
 
-
-
-
 * {
     font-family: 'Space Age', sans-serif;
 }
@@ -12,9 +9,7 @@
 body {
     background-image: url(/SpaceWar/assets/img/bodyBackground4.gif);
     background-size: cover;
-    overflow: hidden;
 }
-
 
 /* -----------HOME----------- */
 
@@ -70,8 +65,7 @@ a {
     text-align: center;
 }
 
-/* ----------------------- MAIN GAME --------- */
-
+/* -------- MAIN GAME -------------- */
 .game {
     width: 600px;
     height: 200px;
@@ -124,6 +118,7 @@ a {
     }
 }
 
+/* ------------------------------- */
 
 /* --------CACTUS--------------- */
 
@@ -222,6 +217,7 @@ a {
     }
 }
 
+/* ---------- */
 
 
 #start {
@@ -262,7 +258,7 @@ a {
         blink-caret 1.75s step-end infinite;
 }
 
-/* The typing effect */
+/*  typing effect */
 @keyframes typing {
     from {
         width: 0
@@ -273,7 +269,7 @@ a {
     }
 }
 
-/* The typewriter cursor effect */
+/* Le typewriter cursor effect */
 @keyframes blink-caret {
 
     from,

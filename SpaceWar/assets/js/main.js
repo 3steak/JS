@@ -39,7 +39,9 @@ function jump() {
 document.addEventListener('keydown', (event) => {
     jump();
 })
-
+document.addEventListener('touchstart', (touch) => {
+    jump();
+})
 // ===============================================
 
 
@@ -61,6 +63,7 @@ let scoreCounter = () => {
 
 // Ajout listener sur keydown
 window.addEventListener("keydown", startanimation);
+window.addEventListener('touchEvent', startanimation);
 
 
 // ===============================================
@@ -70,7 +73,7 @@ window.addEventListener("keydown", startanimation);
 function startanimation(start) {
 
     // si code de la touche pressé == Enter
-    if (start.code == "Enter") {
+    if (start.code == "Enter" || TouchEvent == true) {
         startGame.style.display = "none";
         gameOver.style.display = "none";
 

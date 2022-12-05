@@ -13,6 +13,9 @@ body {
 }
 
 /* -----------HOME----------- */
+.mobil_rotate {
+    display: none;
+}
 
 .home {
     width: 600px;
@@ -52,15 +55,15 @@ a {
     height: 30px;
     position: relative;
     vertical-align: middle;
-    margin: 5px;
+    margin: 10px;
 }
 
 
 .play_btn {
     position: relative;
-    top: 200px;
+    top: 180px;
     left: 250px;
-    background: rgb(245, 245, 245, 0.3);
+    background: rgb(245, 245, 245, 1);
     border-radius: 5px;
     width: 100px;
     text-align: center;
@@ -354,7 +357,49 @@ p {
     color: white;
 }
 
+/*  MEDIA SCREEN  */
 
+@media screen and (max-width:800px) and (orientation: landscape) {
+
+    .home {
+        margin: 30px auto;
+    }
+
+    .game {
+        margin: 70px auto;
+    }
+
+    body {
+        background: url(/SpaceWar/assets/img/bodyBackground4.gif);
+    }
+
+    .chifumi {
+        width: 90%;
+    }
+
+    .chifumi p {
+        font-size: 0.8rem;
+    }
+
+    .monster {
+        width: 150px;
+        height: 100px;
+        margin: 0 auto;
+    }
+
+
+
+}
+
+@media screen and (max-width:500px) and (orientation: portrait) {
+
+    .mobil_rotate {
+        display: block;
+        width: 200px;
+        background: rgb(245, 245, 245, 0.5);
+        margin: 50px 50px;
+    }
+}
 
 /*    ANIMATION D'ENTREE ET SORTIE (ANIMISTA) */
 
@@ -1090,6 +1135,3 @@ p {
 }
 
 /*  -------------- */
-
-
-/*  MEDIA SCREEN  */

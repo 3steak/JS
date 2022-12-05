@@ -9,7 +9,8 @@ play.addEventListener('click', (playgame) => {
     }, 300);
 })
 
-//  -------- MAIN GAME --------- 
+// ----------- MAIN GAME --------------
+
 const game = document.querySelector('.game');
 const dino = document.getElementById('dino');
 const cactus = document.getElementById('cactus');
