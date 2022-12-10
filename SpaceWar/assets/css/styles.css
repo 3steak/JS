@@ -7,7 +7,7 @@
 
 
 body {
-    background-image: url(/SpaceWar/assets/img/bodyBackground4.gif);
+    background-image: url(/assets/img/bodyBackground4.gif);
     background-size: cover;
     overflow: hidden;
 }
@@ -23,7 +23,7 @@ body {
     margin: auto;
     margin-top: 100px;
     overflow: hidden;
-    background-image: url(/SpaceWar/assets/img/home2.gif);
+    background-image: url(/assets/img/home2.gif);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -78,7 +78,7 @@ a {
     margin: auto;
     margin-top: 150px;
     overflow: hidden;
-    background: url(/SpaceWar/assets/img/backgroundSpace1.gif);
+    background: url(/assets/img/backgroundSpace1.gif);
     background-size: cover;
     background-repeat: no-repeat;
     display: none;
@@ -89,7 +89,7 @@ a {
 #dino {
     width: 50px;
     height: 50px;
-    background-image: url(/SpaceWar/assets/img/vaisseau1.gif);
+    background-image: url(/assets/img/vaisseau1.gif);
     background-size: 50px 50px;
     position: relative;
     /* saut = reduire le top */
@@ -135,7 +135,7 @@ a {
     top: 108px;
     left: 600px;
 
-    background-image: url(/SpaceWar/assets/img/asteroid3.gif);
+    background-image: url(/assets/img/asteroid3.gif);
     background-size: 90px 40px;
 
     animation: none;
@@ -149,7 +149,7 @@ a {
     position: relative;
     top: 30px;
     left: 600px;
-    background-image: url(/SpaceWar/assets/img/enemy1.gif);
+    background-image: url(/assets/img/enemy1.gif);
     background-size: 90px 40px;
     animation: none;
     animation-iteration-count: 2;
@@ -325,17 +325,17 @@ a {
 }
 
 .paper {
-    background-image: url(/SpaceWar/assets/img/firePlanet.gif);
+    background-image: url(/assets/img/firePlanet.gif);
     background-size: cover;
 }
 
 .scissors {
-    background-image: url(/SpaceWar/assets/img/waterPlanet.gif);
+    background-image: url(/assets/img/waterPlanet.gif);
     background-size: cover;
 }
 
 .rock {
-    background-image: url(/SpaceWar/assets/img/greenPlanet.gif);
+    background-image: url(/assets/img/greenPlanet.gif);
     background-size: cover;
 }
 
@@ -365,7 +365,7 @@ p {
 }
 
 .chifumi {
-    background-image: url(/SpaceWar/assets/img/storm1.gif);
+    background-image: url(/assets/img/storm1.gif);
     background-size: cover;
     border-radius: 10px;
     display: none;
@@ -391,7 +391,7 @@ p {
     }
 
     body {
-        background: url(/SpaceWar/assets/img/bodyBackground4.gif);
+        background: url(/assets/img/bodyBackground4.gif);
     }
 
     .chifumi {
